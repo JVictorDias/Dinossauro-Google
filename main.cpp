@@ -14,9 +14,9 @@
 #define DINO_BRAIN_QTD_OUTPUT   3       /// Quantidade de neuronios na camada de saida
 
 #include "PIG.h"                        ///   Biblioteca Grafica
-#include "Sprites.h"                    ///   Todos os códigos sobre sprite
-#include "redeNeural.c"                 ///   Código da rede neural
-#include "Tipos.h"                      ///   Definições de structs
+#include "Sprites.h"                    ///   Todos os cÃ³digos sobre sprite
+#include "redeNeural.c"                 ///   CÃ³digo da rede neural
+#include "Tipos.h"                      ///   DefiniÃ§Ãµes de structs
 #include "Variaveis.h"                  ///   Variaveis globais
 #include "FuncoesAuxiliares.h"
 #include "DNAs.h"
@@ -27,7 +27,7 @@
 #include "Colisao.h"
 #include "Movimentar.h"
 #include "Atualizar.h"
-#include "InputsRedeNeural.h"   /// Funções que captam a informação para entregar para a rede neural
+#include "InputsRedeNeural.h"   /// FunÃ§Ãµes que captam a informaÃ§Ã£o para entregar para a rede neural
 
 
 #include <thread>
@@ -35,7 +35,7 @@
 
 ///////////////////////////////////////////////////
 
-void DesenharThread()               /// Função chamada pela Thread responsavel por desenhar na tela
+void DesenharThread()               /// FunÃ§Ã£o chamada pela Thread responsavel por desenhar na tela
 {
     while(PIG_JogoRodando == 1)
     {
@@ -79,7 +79,7 @@ void AplicarGravidade()
     }
 }
 
-void ControlarEstadoDinossauros()       /// Função responsavel por calcular a decisão da rede neural e aplicar no dinossauro (ou seja, é a função que faz ele pular, abaixar ou usar o aviao)
+void ControlarEstadoDinossauros()       /// FunÃ§Ã£o responsavel por calcular a decisÃ£o da rede neural e aplicar no dinossauro (ou seja, Ã© a funÃ§Ã£o que faz ele pular, abaixar ou usar o aviao)
 {
     int Abaixar = 0, Pular = 0, Aviao = 0;
     double Saida[10];
@@ -96,21 +96,21 @@ void ControlarEstadoDinossauros()       /// Função responsavel por calcular a de
             Entrada[4] = fabs(VELOCIDADE);
             Entrada[5] = Dinossauros[i].Y;
 
-            RNA_CopiarParaEntrada(Dinossauros[i].Cerebro, Entrada);     /// Enviando informações para a rede neural
-            RNA_CalcularSaida(Dinossauros[i].Cerebro);                  /// Calculando a decisão da rede
-            RNA_CopiarDaSaida(Dinossauros[i].Cerebro, Saida);           /// Extraindo a decisão para vetor ''saida''
+            RNA_CopiarParaEntrada(Dinossauros[i].Cerebro, Entrada);     /// Enviando informaÃ§Ãµes para a rede neural
+            RNA_CalcularSaida(Dinossauros[i].Cerebro);                  /// Calculando a decisÃ£o da rede
+            RNA_CopiarDaSaida(Dinossauros[i].Cerebro, Saida);           /// Extraindo a decisÃ£o para vetor ''saida''
 
             if(Saida[0] == 0.0)
                 Pular = 0;
             else
                 Pular = 1;
 
-            if(Saida[1] <= 0.0)
+            if(Saida[1] == 0.0)
                 Abaixar = 0;
             else
                 Abaixar = 1;
 
-            if(Saida[2] <= 0.0)
+            if(Saida[2] == 0.0)
                 Aviao = 0;
             else
                 Aviao = 1;
@@ -192,7 +192,7 @@ void ControlarEstadoDinossauros()       /// Função responsavel por calcular a de
             Dinossauros[i].AviaoCooldown = Dinossauros[i].AviaoCooldown - fabs(VELOCIDADE);
 
 
-            if(Dinossauros[i].Estado == 0) /// Em pé
+            if(Dinossauros[i].Estado == 0) /// Em pÃ©
             {
                 Dinossauros[i].SpriteAtual = 0 + Dinossauros[i].Frame;
             }
@@ -351,7 +351,7 @@ void RandomMutations()
                 case 1:
                 {
                     double number = (rand()%10001)/10000.0 + 0.5;
-                    Vetor[j]->DNA[indice] = Vetor[j]->DNA[indice]*number;   /// Multiplicação aleatoria
+                    Vetor[j]->DNA[indice] = Vetor[j]->DNA[indice]*number;   /// MultiplicaÃ§Ã£o aleatoria
 
                 }   break;
                 case 2:
