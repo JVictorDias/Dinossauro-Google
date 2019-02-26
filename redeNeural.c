@@ -5,14 +5,11 @@
 #define TAXA_PESO_INICIAL   (1.0)
 #define BIAS                1
 
-//#define Ativacao(X)         (1.0/(1.0+exp(-X)))       /// sigmoide(x)
-//#define Derivada(X)         (X*(1.0-X))
+//#define AtivacaoOcultas(X)         (1.0/(1.0+exp(-X)))       /// sigmoide(x)
+//#define AtivacaoSaida(X)           (1.0/(1.0+exp(-X)))       /// sigmoide(x)
 
-//#define Ativacao(X)         tanh(X)
-//#define Derivada(X)         (1.0 - (tanh(X)*tanh(X)))
-
-//#define Ativacao(X)         relu(X)
-//#define Derivada(X)         reluDx(X)
+//#define AtivacaoOcultas(X)         tanh(X)
+//#define AtivacaoSaida(X)           tanh(X)
 
 #define AtivacaoOcultas(X)        relu(X)
 #define AtivacaoSaida(X)          relu(X)
