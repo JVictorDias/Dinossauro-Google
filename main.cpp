@@ -5,7 +5,7 @@
 #define MODO_JOGO               0       /// 0 = TREINANDO   - OBS: Aumentar tamanho da populacao para 2000
                                         /// 1 = JOGAVEL     - OBS: Diminuir tamanho da populacao para 1
 
-#define POPULACAO_TAMANHO       3000
+#define POPULACAO_TAMANHO       2000
 
 
 #define DINO_BRAIN_QTD_LAYERS   1       /// Quantidade de camadas escondidas na rede neural
@@ -89,9 +89,9 @@ void ControlarEstadoDinossauros()       /// Função responsavel por calcular a 
     {
         if(Dinossauros[i].Estado != 3)
         {
-            Entrada[0] = DistanciaProximoObstaculo(Dinossauros[i].X);            /// Maior Distancia Possivel
-            Entrada[1] = LarguraProximoObstaculo(Dinossauros[i].X);              /// Maior Distancia Possivel
-            Entrada[2] = AlturaProximoObstaculo(Dinossauros[i].X);               /// Maior Altura Possivel
+            Entrada[0] = DistanciaProximoObstaculo(Dinossauros[i].X);            
+            Entrada[1] = LarguraProximoObstaculo(Dinossauros[i].X);              
+            Entrada[2] = AlturaProximoObstaculo(Dinossauros[i].X);               
             Entrada[3] = ComprimentoProximoObstaculo(Dinossauros[i].X);
             Entrada[4] = fabs(VELOCIDADE);
             Entrada[5] = Dinossauros[i].Y;
