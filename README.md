@@ -8,4 +8,6 @@
 - A função 'ControlarEstadoDinossauros' dentro do arquivo 'main.cpp' contém o código que faz a comunicação entre o jogo e a rede neural.
 - O resto dos arquivos são apenas os códigos da implementação do jogo.
 
+O arquivo Dinossauro.zip contém o executável (Windows) :)
+
 Um grande abraço!
