@@ -16,7 +16,7 @@ Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do dino
   - Camada Escondida com 6 neurônios + 1 Viés, totalizando 7 Neurônios
   - Camada de Saída com 3 neurônios (Pular, Abaixar, Avião)
   - A função de ativação utilizada em todos os neurônios foi a ReLU.
-  - O método de aprendizagem é comumente chamado de ''Random Mutations".
+  - O método de aprendizagem é comumente chamado de "Random Mutations".
   - O tamanho da população que utilizei variou entre 1000 ~ 5000 indivíduos.
   - O tempo de aprendizagem variou entre 15 ~ 60 minutos por modo de Jogo.
 
