@@ -6,7 +6,7 @@ Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do dino
 
 # Sobre o Projeto
 
-  A ideia consiste em utilizar uma "seleção artificial" para evoluir os pesos da rede neural, com o propósito de encontrar a combinação de pesos melhor adaptada ao jogo e que consegue fazer a melhor pontuação.
+  A ideia consiste em utilizar uma "seleção artificial" para evoluir os pesos de várias redes neurais, com o propósito de encontrar a melhor combinação e assim obter o melhor comportamento para o personagem.
 
   O jogo foi recriado do zero(sem engines) utilizando a biblioteca gráfica **Programming Interface Gaming (PIG)** que por sua vez é baseada na tradicional **Simple DirectMedia Layer (SDL)**.
   
@@ -35,7 +35,8 @@ Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do dino
 # Observações:
 
 - O arquivo 'redeNeural.c' contém todas as funções relativas a implementação da Rede Neural (tudo sobre a rede neural está nesse arquivo).
-  Ele está genérico, ou seja, você pode copiar o arquivo e incluir no seu projeto e você conseguirá usar a rede neural facilmente.
+  Ele está genérico, ou seja, você pode baixar o arquivo e incluir no seu projeto e você conseguirá usar a rede neural facilmente.
+    
     Exemplo:  
     ```
     RedeNeural* Dino = RNA_CriarRedeNeural(1,2,3,4);
@@ -48,6 +49,6 @@ Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do dino
 - O resto dos arquivos são apenas os códigos da implementação do jogo.
 
 
-**O arquivo Dinossauro.zip contém o executável (Windows) :)**
+**O arquivo Dinossauro.zip contém o executável para Windows :)**
 
 Um grande abraço!
