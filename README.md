@@ -1,5 +1,9 @@
 # Dinossauro-Google
 
+Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do Dinossauro no Navegador Google Chrome
+
+![Preview-Screens](https://github.com/JVictorDias/Dinossauro-Google/blob/master/preview.gif)
+
 - O arquivo 'redeNeural.c' contém todas as funções relativas a implementação da Rede Neural (tudo sobre a rede neural está nesse arquivo).
   Ele está genérico, ou seja, você pode copiar o arquivo e incluir no seu projeto e você conseguirá usar a rede neural facilmente.
     Exemplo:  RedeNeural* Dino = RNA_CriarRedeNeural(1,2,3,4);
