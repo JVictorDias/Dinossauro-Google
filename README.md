@@ -6,7 +6,9 @@ Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do dino
 
 # Sobre o Projeto
 
-  O jogo foi recriado do zero(sem engines) utilizando a biblioteca gráfica **Programming Interface Gaming (PIG)** baseada na tradicional **Simple DirectMedia Layer (SDL)**.
+  A ideia consiste em utilizar uma "seleção artificial" para evoluir os pesos da rede neural, com o propósito de encontrar a combinação de pesos melhor adaptada ao jogo e que consegue fazer a melhor pontuação.
+
+  O jogo foi recriado do zero(sem engines) utilizando a biblioteca gráfica **Programming Interface Gaming (PIG)** que por sua vez é baseada na tradicional **Simple DirectMedia Layer (SDL)**.
   
   A Rede Neural Artificial utilizada foi uma Perceptron Multilayer com 3 camadas!
 
