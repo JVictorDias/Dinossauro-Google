@@ -9,9 +9,7 @@ Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do dino
   Foi utilizado uma Rede Neural Artificial (Perceptron Multilayer) com 3 camadas!
 
   ✅ - Camada de Entrada com 6 sensores + 1 Viés, totalizando 7 Neurônios
-  
   ✅ - Camada Escondida com 6 neurônios + 1 Viés, totalizando 7 Neurônios
-  
   ✅ - Camada de Saída com 3 neurônios (Pular, Abaixar, Avião)
 
   A função de ativação utilizada em todos os neurônios foi a ReLU.
