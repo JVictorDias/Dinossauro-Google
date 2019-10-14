@@ -8,16 +8,18 @@ Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do dino
 
   Foi utilizado uma Rede Neural Artificial (Perceptron Multilayer) com 3 camadas!
 
-  -✅ Camada de Entrada com 6 sensores + 1 Viés, totalizando 7 Neurônios
-  -✅ Camada Escondida com 6 neurônios + 1 Viés, totalizando 7 Neurônios
-  -✅ Camada de Saída com 3 neurônios (Pular, Abaixar, Avião)
+  ✅ - Camada de Entrada com 6 sensores + 1 Viés, totalizando 7 Neurônios
+  
+  ✅ - Camada Escondida com 6 neurônios + 1 Viés, totalizando 7 Neurônios
+  
+  ✅ - Camada de Saída com 3 neurônios (Pular, Abaixar, Avião)
 
   - A função de ativação utilizada em todos os neurônios foi a ReLU.
   - O método de aprendizagem é comumente chamado de ''Random Mutations".
   - O tamanho da população que utilizei variou entre 1000 ~ 5000 indivíduos.
   - O tempo de aprendizagem variou entre 15 ~ 60 minutos por modo de Jogo.
 
-  **Para mais informações e explicações acesse o vídeo demonstrativo:** https://www.youtube.com/watch?v=NZlIYr1slAk
+  **Para mais informações e explicações acesse o vídeo demonstrativo:** [Vídeo no Youtube](https://www.youtube.com/watch?v=NZlIYr1slAk)
 
 # Por quê?
 
