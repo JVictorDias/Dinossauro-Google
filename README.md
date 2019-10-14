@@ -1,6 +1,6 @@
-# Dinossauro-Google
+# Google Dino I.A.
 
-Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do Dinossauro no Navegador Google Chrome
+Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do dinossauro no navegador Google Chrome
 
 ![Preview-Screens](https://github.com/JVictorDias/Dinossauro-Google/blob/master/preview.gif)
 
