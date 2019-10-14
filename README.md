@@ -6,7 +6,9 @@ Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do dino
 
 # Sobre o Projeto
 
-  Foi utilizado uma Rede Neural Artificial (Perceptron Multilayer) com 3 camadas!
+  O jogo foi recriado do zero(sem engines) utilizando a biblioteca gráfica **Programming Interface Gaming (PIG)** baseada na tradicional **Simple DirectMedia Layer (SDL)**.
+  
+  A Rede Neural Artificial utilizada foi uma Perceptron Multilayer com 3 camadas!
 
   - Camada de Entrada com 6 sensores + 1 Viés, totalizando 7 Neurônios
   - Camada Escondida com 6 neurônios + 1 Viés, totalizando 7 Neurônios
@@ -18,11 +20,15 @@ Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do dino
 
       **Para mais informações e explicações acesse o [vídeo demonstrativo](https://www.youtube.com/watch?v=NZlIYr1slAk).** 
 
+
+
 # Por quê?
 
   Desenvolvi esse projeto por curiosidade e diversão :)
   
   Para mais projetos como esse visite o [canal](https://www.youtube.com/watch?v=NZlIYr1slAk).
+
+
 
 # Observações:
 
@@ -39,6 +45,7 @@ Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do dino
 - A função 'ControlarEstadoDinossauros' dentro do arquivo 'main.cpp' contém o código que faz a comunicação entre o jogo e a rede neural.
 - O resto dos arquivos são apenas os códigos da implementação do jogo.
 
-O arquivo Dinossauro.zip contém o executável (Windows) :)
+
+**O arquivo Dinossauro.zip contém o executável (Windows) :)**
 
 Um grande abraço!
