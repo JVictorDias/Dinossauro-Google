@@ -19,7 +19,7 @@ Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do dino
   - O tamanho da população que utilizei variou entre 1000 ~ 5000 indivíduos.
   - O tempo de aprendizagem variou entre 15 ~ 60 minutos por modo de Jogo.
 
-  **Para mais informações e explicações acesse o vídeo demonstrativo:** [Vídeo no Youtube](https://www.youtube.com/watch?v=NZlIYr1slAk)
+  **Para mais informações e explicações acesse o [Vídeo](https://www.youtube.com/watch?v=NZlIYr1slAk) demonstrativo:** 
 
 # Por quê?
 
