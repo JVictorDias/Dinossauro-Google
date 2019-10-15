@@ -49,6 +49,6 @@ Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do dino
 - O resto dos arquivos são apenas os códigos da implementação do jogo.
 
 
-**Os arquivos "Dinossauro Treinando.zip" e "Dinossauro x1" contém o executável para Windows :)**
+**Os arquivos "Dinossauro Treinando.zip" e "Dinossauro x1.zip" contém o executável para Windows :)**
 
 Um grande abraço!
