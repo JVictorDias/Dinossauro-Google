@@ -28,7 +28,7 @@ Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do dino
 
   Desenvolvi esse projeto por curiosidade e diversão :)
   
-  Para mais projetos como esse visite o [canal](https://www.youtube.com/watch?v=NZlIYr1slAk).
+  Para mais projetos como esse visite o [canal](youtube.com/UniversoProgramado).
 
 
 
