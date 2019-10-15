@@ -34,14 +34,14 @@ Projeto onde várias Redes Neurais competem para aprender a jogar o jogo do dino
 
 # Observações:
 
-- O arquivo 'redeNeural.c' contém todas as funções relativas a implementação da Rede Neural (tudo sobre a rede neural está nesse arquivo).
+- O arquivo 'redeNeural.c' contém todas as funções relativas à implementação da Rede Neural (tudo sobre a rede neural está nesse arquivo).
   Ele está genérico, ou seja, você pode baixar o arquivo e incluir no seu projeto e você conseguirá usar a rede neural facilmente.
     
     Exemplo:  
     ```
     RedeNeural* Dino = RNA_CriarRedeNeural(1,2,3,4);
     ```          
-    Nesse exemplo nós estamos criando uma variável chamada 'Dino' que vai receber a Rede Neural que foi alocada dentro da função RNA_CriarRedeNeural()... Não esqueça de destrui-la após usar, utilizando a função: 
+    Nesse exemplo nós estamos criando uma variável chamada 'Dino' que vai receber a Rede Neural que foi alocada dentro da função RNA_CriarRedeNeural()... Não esqueça de destruí-la após usar, utilizando a função: 
     ```
     RNA_DestruirRedeNeural(Dino);
      ```      
