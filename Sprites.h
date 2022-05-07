@@ -1,3 +1,4 @@
+#include "Missing.h"
 
 #define OBSTACULOS_SPRITE_QUANTIDADE 8
 
