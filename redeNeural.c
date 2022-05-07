@@ -1,5 +1,6 @@
 #include <math.h>
 #include <time.h>
+#include <stdio.h>
 
 #define TAXA_APRENDIZADO (0.1)
 #define TAXA_PESO_INICIAL (1.0)
@@ -48,10 +49,7 @@ double relu(double X)
     {
         return 0;
     }
-    else
-    {
-        return X;
-    }
+    return X;
 }
 
 double reluDx(double X)
@@ -60,10 +58,7 @@ double reluDx(double X)
     {
         return 0;
     }
-    else
-    {
-        return 1;
-    }
+    return 1;
 }
 
 void RNA_CopiarVetorParaCamadas(RedeNeural *Rede, double *Vetor)
@@ -243,7 +238,7 @@ RedeNeural *RNA_CriarRedeNeural(int QuantidadeEscondidas, int QtdNeuroniosEntrad
     return Rede;
 }
 
-RedeNeural *RNA_DestruirRedeNeural(RedeNeural *Rede)
+void RNA_DestruirRedeNeural(RedeNeural *Rede)
 {
     int i, j;
 
@@ -264,49 +259,48 @@ RedeNeural *RNA_DestruirRedeNeural(RedeNeural *Rede)
         free(Rede->CamadaSaida.Neuronios[i].Peso);
     }
     free(Rede->CamadaSaida.Neuronios);
-
-    return NULL;
 }
 
 RedeNeural *RNA_CarregarRede(char *String)
 {
     int i, j, k;
     FILE *f;
-    RedeNeural *Temp;
 
     int QtdEscondida, QtdNeuroEntrada, QtdNeuroSaida, QtdNeuroEscondida;
 
     f = fopen(String, "rb");
-    if (f != NULL)
+    if (f == NULL)
     {
-        fread(&QtdEscondida, 1, sizeof(int), f);
-        fread(&QtdNeuroEntrada, 1, sizeof(int), f);
-        fread(&QtdNeuroEscondida, 1, sizeof(int), f);
-        fread(&QtdNeuroSaida, 1, sizeof(int), f);
-
-        Temp = RNA_CriarRedeNeural(QtdEscondida, QtdNeuroEntrada, QtdNeuroEscondida, QtdNeuroSaida);
-
-        for (k = 0; k < Temp->QuantidadeEscondidas; k++)
-        {
-            for (i = 0; i < Temp->CamadaEscondida[k].QuantidadeNeuronios; i++)
-            {
-                for (j = 0; j < Temp->CamadaEscondida[k].Neuronios[i].QuantidadeLigacoes; j++)
-                {
-                    fread(&(Temp->CamadaEscondida[k].Neuronios[i].Peso[j]), 1, 8, f);
-                }
-            }
-        }
-        for (i = 0; i < Temp->CamadaSaida.QuantidadeNeuronios; i++)
-        {
-            for (j = 0; j < Temp->CamadaSaida.Neuronios[i].QuantidadeLigacoes; j++)
-            {
-                fread(&(Temp->CamadaSaida.Neuronios[i].Peso[j]), 1, 8, f);
-            }
-        }
-
-        fclose(f);
-        return Temp;
+        return NULL;
     }
+
+    fread(&QtdEscondida, 1, sizeof(int), f);
+    fread(&QtdNeuroEntrada, 1, sizeof(int), f);
+    fread(&QtdNeuroEscondida, 1, sizeof(int), f);
+    fread(&QtdNeuroSaida, 1, sizeof(int), f);
+
+    RedeNeural *Temp;
+    Temp = RNA_CriarRedeNeural(QtdEscondida, QtdNeuroEntrada, QtdNeuroEscondida, QtdNeuroSaida);
+
+    for (k = 0; k < Temp->QuantidadeEscondidas; k++)
+    {
+        for (i = 0; i < Temp->CamadaEscondida[k].QuantidadeNeuronios; i++)
+        {
+            for (j = 0; j < Temp->CamadaEscondida[k].Neuronios[i].QuantidadeLigacoes; j++)
+            {
+                fread(&(Temp->CamadaEscondida[k].Neuronios[i].Peso[j]), 1, 8, f);
+            }
+        }
+    }
+    for (i = 0; i < Temp->CamadaSaida.QuantidadeNeuronios; i++)
+    {
+        for (j = 0; j < Temp->CamadaSaida.Neuronios[i].QuantidadeLigacoes; j++)
+        {
+            fread(&(Temp->CamadaSaida.Neuronios[i].Peso[j]), 1, 8, f);
+        }
+    }
+    fclose(f);
+    return Temp;
 }
 
 void RNA_SalvarRede(RedeNeural *Temp, char *String)
@@ -315,32 +309,34 @@ void RNA_SalvarRede(RedeNeural *Temp, char *String)
     FILE *f;
 
     f = fopen(String, "wb");
-    if (f != NULL)
+    if (f == NULL)
     {
-        fwrite(&Temp->QuantidadeEscondidas, 1, sizeof(int), f);
-        fwrite(&Temp->CamadaEntrada.QuantidadeNeuronios, 1, sizeof(int), f);
-        fwrite(&Temp->CamadaEscondida[0].QuantidadeNeuronios, 1, sizeof(int), f);
-        fwrite(&Temp->CamadaSaida.QuantidadeNeuronios, 1, sizeof(int), f);
-
-        for (k = 0; k < Temp->QuantidadeEscondidas; k++)
-        {
-            for (i = 0; i < Temp->CamadaEscondida[k].QuantidadeNeuronios; i++)
-            {
-                for (j = 0; j < Temp->CamadaEscondida[k].Neuronios[i].QuantidadeLigacoes; j++)
-                {
-                    fwrite(&Temp->CamadaEscondida[k].Neuronios[i].Peso[j], 1, 8, f);
-                }
-            }
-        }
-
-        for (i = 0; i < Temp->CamadaSaida.QuantidadeNeuronios; i++)
-        {
-            for (j = 0; j < Temp->CamadaSaida.Neuronios[i].QuantidadeLigacoes; j++)
-            {
-                fwrite(&Temp->CamadaSaida.Neuronios[i].Peso[j], 1, 8, f);
-            }
-        }
-
-        fclose(f);
+        return;
     }
+
+    fwrite(&Temp->QuantidadeEscondidas, 1, sizeof(int), f);
+    fwrite(&Temp->CamadaEntrada.QuantidadeNeuronios, 1, sizeof(int), f);
+    fwrite(&Temp->CamadaEscondida[0].QuantidadeNeuronios, 1, sizeof(int), f);
+    fwrite(&Temp->CamadaSaida.QuantidadeNeuronios, 1, sizeof(int), f);
+
+    for (k = 0; k < Temp->QuantidadeEscondidas; k++)
+    {
+        for (i = 0; i < Temp->CamadaEscondida[k].QuantidadeNeuronios; i++)
+        {
+            for (j = 0; j < Temp->CamadaEscondida[k].Neuronios[i].QuantidadeLigacoes; j++)
+            {
+                fwrite(&Temp->CamadaEscondida[k].Neuronios[i].Peso[j], 1, 8, f);
+            }
+        }
+    }
+
+    for (i = 0; i < Temp->CamadaSaida.QuantidadeNeuronios; i++)
+    {
+        for (j = 0; j < Temp->CamadaSaida.Neuronios[i].QuantidadeLigacoes; j++)
+        {
+            fwrite(&Temp->CamadaSaida.Neuronios[i].Peso[j], 1, 8, f);
+        }
+    }
+
+    fclose(f);
 }
