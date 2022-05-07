@@ -1,7 +1,5 @@
 
 
-
-
 double DistanciaProximoObstaculo(double X)
 {
     int indice = ProcurarProximoObstaculo(X);
