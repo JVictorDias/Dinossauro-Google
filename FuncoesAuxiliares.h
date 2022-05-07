@@ -1,4 +1,4 @@
-
+#include "PIG.h"
 
 int existeNuvem(double X, double Y)
 {
@@ -75,17 +75,17 @@ void VerificarTeclas()
 {
     if (MODO_JOGO != 1)
     {
-        if (PIG_Tecla == TECLA_BAIXO)
+        if (PIG_tecla == TECLA_BAIXO)
         {
             Periodo = Periodo / 2.0;
         }
-        if (PIG_Tecla == TECLA_CIMA)
+        if (PIG_tecla == TECLA_CIMA)
         {
             Periodo = Periodo * 2.0;
         }
     }
 
-    if (PIG_Tecla == TECLA_ESC)
+    if (PIG_tecla == TECLA_ESC)
     {
         DesenharTela = -DesenharTela;
     }
