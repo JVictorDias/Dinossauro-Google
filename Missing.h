@@ -9,7 +9,7 @@ void DefinirColoracao(int obj, PIG_Cor cor)
     return CGerenciadorObjetos::SetColoracao(obj, cor);
 }
 
-int CriarSprite(char *str)
+int CriarSprite(char const *str)
 {
     return PIG_criarSprite(str);
 }
@@ -19,7 +19,7 @@ void ReiniciarTimer(int timer)
     return PIG_reiniciarTimer(timer);
 }
 
-void EscreverEsquerda(char *str, int x, double y, int font)
+void EscreverEsquerda(char const *str, int x, double y, int font)
 {
     return PIG_escreverEsquerda(str, x, y, font);
 }
@@ -74,19 +74,19 @@ double TempoDecorrido(int id_timer)
     return PIG_tempoDecorrido(id_timer);
 }
 
-void CriarJanela(char *nome_Janela, int cursor)
+void CriarJanela(char const *nome_Janela, int cursor)
 {
     return PIG_criarJanela(nome_Janela, LARG_TELA, ALT_TELA);
 }
 
-int CriarFonteNormal(char *nome, int tamanho, PIG_Cor corLetra, int contorno, PIG_Cor corContorno, PIG_Estilo estilo = ESTILO_NORMAL)
+int CriarFonteNormal(char const *nome, int tamanho, PIG_Cor corLetra, int contorno, PIG_Cor corContorno, PIG_Estilo estilo = ESTILO_NORMAL)
 {
     return PIG_criarFonte(nome, tamanho, corLetra, contorno, corContorno, estilo);
 }
 
-int AtualizarJanela()
+void AtualizarJanela()
 {
-    return PIG_atualizarJanela();
+    PIG_atualizarJanela();
 }
 
 void FinalizarJanela()
