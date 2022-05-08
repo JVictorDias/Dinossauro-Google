@@ -58,7 +58,7 @@ void SalvarRedeArquivo()
     }
 
     char String[1000];
-    sprintf(String, "redes\\%.2f - [%d,%d,%d,%d]",
+    sprintf(String, "redes/%.2f - [%d,%d,%d,%d]",
             DistanciaRecorde,
             DINO_BRAIN_QTD_LAYERS,
             DINO_BRAIN_QTD_INPUT,

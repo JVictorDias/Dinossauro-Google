@@ -23,7 +23,7 @@ void InicializarSpriteAviao()
 
     for (int i = 0; i < 2; i++)
     {
-        sprintf(String, "imagens\\aviao%d.bmp", i);
+        sprintf(String, "imagens/aviao%d.bmp", i);
         SpriteAviao[i].Objeto = CriarSprite(String);
         SpriteAviao[i].Largura = 70;
         SpriteAviao[i].Altura = 37;
@@ -41,12 +41,12 @@ void InicializarSpritesObstaculos()
     for (i = 0; i < OBSTACULOS_SPRITE_QUANTIDADE - 1; i++)
     {
 
-        sprintf(String, "imagens\\obs%d.bmp", i);
+        sprintf(String, "imagens/obs%d.bmp", i);
         SpriteObstaculo[i].Objeto = CriarSprite(String);
         SpriteObstaculo[i].Largura = LarguraObstaculos[i];
         SpriteObstaculo[i].Altura = AlturaObstaculos[i];
     }
-    SpriteObstaculo[i].Objeto = CriarSprite("imagens\\obs7.png");
+    SpriteObstaculo[i].Objeto = CriarSprite("imagens/obs7.png");
     SpriteObstaculo[i].Largura = LarguraObstaculos[i];
     SpriteObstaculo[i].Altura = AlturaObstaculos[i];
 }
@@ -56,13 +56,13 @@ void InicializarSprites()
     InicializarSpritesObstaculos();
     InicializarSpriteAviao();
 
-    SpriteNeuronDesativado = CriarSprite("imagens//neuronio7.png");
+    SpriteNeuronDesativado = CriarSprite("imagens/neuronio7.png");
     DefinirColoracao(SpriteNeuronDesativado, PRETO);
-    SpriteNeuronAtivado = CriarSprite("imagens//neuronio7.png");
+    SpriteNeuronAtivado = CriarSprite("imagens/neuronio7.png");
     DefinirColoracao(SpriteNeuronAtivado, BRANCO);
-    SpriteLuz = CriarSprite("imagens//luz.png");
+    SpriteLuz = CriarSprite("imagens/luz.png");
 
-    SpriteSeta = CriarSprite("imagens\\seta2.png");
+    SpriteSeta = CriarSprite("imagens/seta2.png");
     DefinirColoracao(SpriteSeta, PRETO);
 }
 
@@ -77,32 +77,32 @@ Sprite getMontanhaSprite(int codigo)
     {
     case 1:
     {
-        sprite.Objeto = CriarSprite("imagens\\fundo0.bmp");
+        sprite.Objeto = CriarSprite("imagens/fundo0.bmp");
     }
     break;
     case 2:
     {
-        sprite.Objeto = CriarSprite("imagens\\fundo1.bmp");
+        sprite.Objeto = CriarSprite("imagens/fundo1.bmp");
     }
     break;
     case 11:
     {
-        sprite.Objeto = CriarSprite("imagens\\fundo2.bmp");
+        sprite.Objeto = CriarSprite("imagens/fundo2.bmp");
     }
     break;
     case 12:
     {
-        sprite.Objeto = CriarSprite("imagens\\fundo3.bmp");
+        sprite.Objeto = CriarSprite("imagens/fundo3.bmp");
     }
     break;
     case 21:
     {
-        sprite.Objeto = CriarSprite("imagens\\fundo4.bmp");
+        sprite.Objeto = CriarSprite("imagens/fundo4.bmp");
     }
     break;
     case 22:
     {
-        sprite.Objeto = CriarSprite("imagens\\fundo5.bmp");
+        sprite.Objeto = CriarSprite("imagens/fundo5.bmp");
     }
     break;
     }
@@ -128,7 +128,7 @@ Sprite getChaoSprite()
         cont = cont + 1;
     }
 
-    sprintf(String, "imagens\\chao%d.bmp", Indice);
+    sprintf(String, "imagens/chao%d.bmp", Indice);
     sprite.Objeto = CriarSprite(String);
     sprite.Largura = 60;
     sprite.Altura = 12;
@@ -143,7 +143,7 @@ Sprite getDinossauroSprite(int Indice, PIG_Cor cor)
     char String[1000];
     Sprite sprite;
 
-    sprintf(String, "imagens\\dino%d.bmp", Indice);
+    sprintf(String, "imagens/dino%d.bmp", Indice);
     sprite.Objeto = CriarSprite(String);
 
     sprite.Largura = LarguraFramesDino[Indice];
@@ -184,7 +184,7 @@ Sprite getNuvemSprite()
 {
     Sprite sprite;
 
-    sprite.Objeto = CriarSprite("imagens\\nuvem.bmp");
+    sprite.Objeto = CriarSprite("imagens/nuvem.bmp");
     sprite.Largura = 46;
     sprite.Altura = 13;
 
