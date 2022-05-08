@@ -13,9 +13,9 @@
 #define DINO_BRAIN_QTD_OUTPUT 3 /// Quantidade de neuronios na camada de saida
 
 #include "PIG.h"        ///   Biblioteca Grafica
-#include "Sprites.h"    ///   Todos os códigos sobre sprite
-#include "redeNeural.c" ///   Código da rede neural
-#include "Tipos.h"      ///   Definições de structs
+#include "Sprites.h"    ///   Todos os cï¿½digos sobre sprite
+#include "redeNeural.c" ///   Cï¿½digo da rede neural
+#include "Tipos.h"      ///   Definiï¿½ï¿½es de structs
 #include "Variaveis.h"  ///   Variaveis globais
 #include "FuncoesAuxiliares.h"
 #include "DNAs.h"
@@ -26,14 +26,14 @@
 #include "Colisao.h"
 #include "Movimentar.h"
 #include "Atualizar.h"
-#include "InputsRedeNeural.h" /// Funções que captam a informação para entregar para a rede neural
+#include "InputsRedeNeural.h" /// Funï¿½ï¿½es que captam a informaï¿½ï¿½o para entregar para a rede neural
 
 #include <thread>
 #include <chrono>
 
 ///////////////////////////////////////////////////
 
-void DesenharThread() /// Função chamada pela Thread responsavel por desenhar na tela
+void DesenharThread() /// Funï¿½ï¿½o chamada pela Thread responsavel por desenhar na tela
 {
     while (PIG_jogoRodando() == 1)
     {
@@ -76,7 +76,7 @@ void AplicarGravidade()
     }
 }
 
-void ControlarEstadoDinossauros() /// Função responsavel por calcular a decisão da rede neural e aplicar no dinossauro (ou seja, é a função que faz ele pular, abaixar ou usar o aviao)
+void ControlarEstadoDinossauros() /// Funï¿½ï¿½o responsavel por calcular a decisï¿½o da rede neural e aplicar no dinossauro (ou seja, ï¿½ a funï¿½ï¿½o que faz ele pular, abaixar ou usar o aviao)
 {
     int Abaixar = 0, Pular = 0, Aviao = 0;
     double Saida[10];
@@ -93,9 +93,9 @@ void ControlarEstadoDinossauros() /// Função responsavel por calcular a decisão 
             Entrada[4] = fabs(VELOCIDADE);
             Entrada[5] = Dinossauros[i].Y;
 
-            RNA_CopiarParaEntrada(Dinossauros[i].Cerebro, Entrada); /// Enviando informações para a rede neural
-            RNA_CalcularSaida(Dinossauros[i].Cerebro);              /// Calculando a decisão da rede
-            RNA_CopiarDaSaida(Dinossauros[i].Cerebro, Saida);       /// Extraindo a decisão para vetor ''saida''
+            RNA_CopiarParaEntrada(Dinossauros[i].Cerebro, Entrada); /// Enviando informaï¿½ï¿½es para a rede neural
+            RNA_CalcularSaida(Dinossauros[i].Cerebro);              /// Calculando a decisï¿½o da rede
+            RNA_CopiarDaSaida(Dinossauros[i].Cerebro, Saida);       /// Extraindo a decisï¿½o para vetor ''saida''
 
             if (Saida[0] == 0.0)
                 Pular = 0;
@@ -118,15 +118,15 @@ void ControlarEstadoDinossauros() /// Função responsavel por calcular a decisão 
                 Abaixar = 0;
                 Aviao = 0;
 
-                if (PIG_meuTeclado[TECLA_CIMA] == 1)
+                if (PIG_teclado[TECLA_CIMA] == 1)
                 {
                     Pular = 1;
                 }
-                if (PIG_meuTeclado[TECLA_BAIXO] == 1)
+                if (PIG_teclado[TECLA_BAIXO] == 1)
                 {
                     Abaixar = 1;
                 }
-                if (PIG_meuTeclado[TECLA_BARRAESPACO] == 1)
+                if (PIG_teclado[TECLA_BARRAESPACO] == 1)
                 {
                     Aviao = 1;
                 }
@@ -187,7 +187,7 @@ void ControlarEstadoDinossauros() /// Função responsavel por calcular a decisão 
             }
             Dinossauros[i].AviaoCooldown = Dinossauros[i].AviaoCooldown - fabs(VELOCIDADE);
 
-            if (Dinossauros[i].Estado == 0) /// Em pé
+            if (Dinossauros[i].Estado == 0) /// Em pï¿½
             {
                 Dinossauros[i].SpriteAtual = 0 + Dinossauros[i].Frame;
             }
@@ -345,7 +345,7 @@ void RandomMutations()
             case 1:
             {
                 double number = (rand() % 10001) / 10000.0 + 0.5;
-                Vetor[j]->DNA[indice] = Vetor[j]->DNA[indice] * number; /// Multiplicação aleatoria
+                Vetor[j]->DNA[indice] = Vetor[j]->DNA[indice] * number; /// Multiplicaï¿½ï¿½o aleatoria
             }
             break;
             case 2:
