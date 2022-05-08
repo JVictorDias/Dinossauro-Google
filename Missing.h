@@ -76,8 +76,6 @@ double TempoDecorrido(int id_timer)
 
 void CriarJanela(char const *nome_Janela, int cursor)
 {
-    LARG_TELA = 1366;
-    ALT_TELA = 768;
     return PIG_criarJanela(nome_Janela, LARG_TELA, ALT_TELA);
 }
 
